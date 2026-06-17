@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Your Trip - Travel Burundi</title>
+    <meta name="description" content="Contact our local experts or leave a review of your travel experiences in Burundi.">
+    <link rel="stylesheet" href="styles/project.css">
+    <script src="scripts/project.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Travel Burundi</h1>
+        <nav>
+            <button id="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="attractions.html">Attractions</a></li>
+                <li><a href="form.html" class="active">Book / Review</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Share Your Travel Interests</h2>
+            <div id="stats-banner" class="stats-counter"></div>
+            
+            <form id="travel-form" action="#" method="get">
+                <label for="full-name">Full Name *</label>
+                <input type="text" id="full-name" name="fullName" required placeholder="John Doe">
+
+                <label for="user-email">Email Address *</label>
+                <input type="email" id="user-email" name="userEmail" required placeholder="name@example.com">
+
+                <label for="interest-type">Primary Interest</label>
+                <select id="interest-type" name="interestType">
+                    <option value="nature">Nature & Wildlife Eco-Tours</option>
+                    <option value="culture">Cultural Landmarks & Traditions</option>
+                    <option value="beach">Lake Tanganyika Resorts</option>
+                </select>
+
+                <label for="comments">Additional Message / Review</label>
+                <textarea id="comments" name="comments" rows="5" placeholder="Tell us what you'd like to see..."></textarea>
+
+                <button type="submit" id="submit-btn">Submit Inquiry</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> | Benjamin Iriganje | Bujumbura, Burundi</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+        <p><a href="references.html">Project References</a></p>
+    </footer>
+</body>
+</html>

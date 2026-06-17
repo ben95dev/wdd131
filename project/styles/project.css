@@ -1,0 +1,255 @@
+/* Color Palette Variables */
+:root {
+    --primary-color: #1b4d3e; /* Forest Green tint matching Burundi's environment */
+    --secondary-color: #ce1126; /* Deep Red accent */
+    --accent-color: #f4f4f9;
+    --text-color: #333333;
+    --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Base Formats */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    color: var(--text-color);
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Header & Navigation Layout */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: none; /* Collapsed view for mobile first */
+    flex-direction: column;
+}
+
+nav ul.show {
+    display: flex;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+#menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main Content Blocks */
+main {
+    padding: 1rem;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.hero img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    width: 90%;
+    border-radius: 5px;
+}
+
+/* Dynamic Grid / Cards Layout Style Updates */
+.filter-controls {
+    margin: 1rem 0;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    background-color: #e0e0e0;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.filter-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Updated Card Styles for handling images properly */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0; /* Clear padding to let the image flush to top corners */
+    background-color: var(--accent-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card-image-container {
+    width: 100%;
+    height: 180px; /* Uniform constraint for alignments */
+    overflow: hidden;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex-grow: 1;
+}
+
+.card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.2rem;
+}
+
+/* Styled Learn More Buttons inside individual cards */
+.learn-more-btn {
+    display: inline-block;
+    margin-top: auto; /* Push down cleanly */
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    width: max-content;
+    border-radius: 4px;
+}
+
+.learn-more-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 0.8rem;
+}
+
+input, select, textarea {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    background-color: #123329;
+}
+
+.stats-counter {
+    text-align: center;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* Footer layout */
+footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: white;
+}
+
+/* Responsive Breakpoints Larger Screens */
+@media (min-width: 48rem) {
+    #menu-toggle {
+        display: none; /* Hide burger icon */
+    }
+
+    nav ul {
+        display: flex; /* Always display row links */
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero img {
+        height: 400px;
+    }
+}
+
+@media (min-width: 64rem) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
