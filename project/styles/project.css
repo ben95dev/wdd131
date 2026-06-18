@@ -17,14 +17,14 @@
 body {
     font-family: var(--font-stack);
     color: var(--text-color);
-    background-color: #ffffff;
+    background-color: var(--accent-color);
     line-height: 1.6;
 }
 
 /* Header & Navigation Layout */
 header {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--accent-color);
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -42,7 +42,7 @@ nav ul.show {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--accent-color);
     text-decoration: none;
     padding: 0.5rem 1rem;
     display: block;
@@ -55,7 +55,7 @@ nav ul li a.active, nav ul li a:hover {
 #menu-toggle {
     background: none;
     border: none;
-    color: white;
+    color: var(--accent-color);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -65,10 +65,24 @@ main {
     padding: 1rem;
 }
 
+/* Redesigned Welcome Banner Section Elements */
+.welcome-banner {
+    text-align: center;
+    background-color: var(--accent-color);
+    padding: 2rem 1rem;
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.welcome-banner h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
 .hero {
     position: relative;
     text-align: center;
-    color: white;
     margin-bottom: 1.5rem;
 }
 
@@ -77,17 +91,6 @@ main {
     height: 250px;
     object-fit: cover;
     border-radius: 8px;
-}
-
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.6);
-    padding: 1rem;
-    width: 90%;
-    border-radius: 5px;
 }
 
 /* Dynamic Grid / Cards Layout Style Updates */
@@ -100,7 +103,7 @@ main {
 
 .filter-btn {
     padding: 0.5rem 1rem;
-    background-color: #e0e0e0;
+    background-color: var(--accent-color);
     border: none;
     cursor: pointer;
     border-radius: 4px;
@@ -108,7 +111,7 @@ main {
 
 .filter-btn:hover {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--accent-color);
 }
 
 .grid-container {
@@ -122,7 +125,7 @@ main {
 .card {
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 0; /* Clear padding to let the image flush to top corners */
+    padding: 0; 
     background-color: var(--accent-color);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: flex;
@@ -132,7 +135,7 @@ main {
 
 .card-image-container {
     width: 100%;
-    height: 180px; /* Uniform constraint for alignments */
+    height: 180px; 
     overflow: hidden;
 }
 
@@ -156,24 +159,68 @@ main {
     margin-bottom: 0.2rem;
 }
 
-/* Styled Learn More Buttons inside individual cards */
+/* Styled Interactive Learn More Buttons inside individual cards */
 .learn-more-btn {
     display: inline-block;
-    margin-top: auto; /* Push down cleanly */
-    padding: 0.4rem 0.8rem;
+    margin-top: auto; 
+    padding: 0.5rem 1rem;
     border: 1px solid var(--primary-color);
     background-color: transparent;
     color: var(--primary-color);
-    text-decoration: none;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     width: max-content;
     border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
 .learn-more-btn:hover {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--accent-color);
+}
+
+/* Modal Popup Window Component Styling */
+.modal-overlay {
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 1000; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--accent-color); 
+    padding: 2rem; 
+    border-radius: 8px; 
+    max-width: 500px; 
+    width: 90%; 
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    position: absolute; 
+    top: 10px; 
+    right: 15px; 
+    font-size: 1.7rem; 
+    cursor: pointer; 
+    font-weight: bold;
+    color: #666;
+}
+
+.close-btn:hover {
+    color: var(--secondary-color);
+}
+
+#modal-title {
+    margin-bottom: 1rem; 
+    color: var(--primary-color);
 }
 
 /* Form Styles */
@@ -194,7 +241,7 @@ input, select, textarea {
 
 button[type="submit"] {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--accent-color);
     padding: 0.8rem;
     border: none;
     cursor: pointer;
@@ -215,8 +262,8 @@ button[type="submit"]:hover {
 
 /* Footer layout */
 footer {
-    background-color: #222;
-    color: #ccc;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
@@ -224,17 +271,17 @@ footer {
 }
 
 footer a {
-    color: white;
+    color: var(--accent-color);
 }
 
 /* Responsive Breakpoints Larger Screens */
 @media (min-width: 48rem) {
     #menu-toggle {
-        display: none; /* Hide burger icon */
+        display: none; 
     }
 
     nav ul {
-        display: flex; /* Always display row links */
+        display: flex; 
         flex-direction: row;
         gap: 1rem;
     }
