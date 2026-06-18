@@ -98,8 +98,7 @@ function renderCardElements(dataset, mountNode) {
                     <h3>${place.title}</h3>
                     <p><strong>Location Focus:</strong> ${place.region}</p>
                     <p><strong>Category Classification:</strong> ${place.category.toUpperCase()}</p>
-                    <p><strong>Visitor Assessment:</strong> ⭐ ${place.score} / 5</p>
-                    <button class="learn-more-btn" data-title="${place.title}" data-region="${place.region}">Learn More &rarr;</button>
+                    <button class="learn-more-btn" data-title="${place.title}" data-region="${place.region}">Learn More</button>
                 </div>
             </div>
         `;
